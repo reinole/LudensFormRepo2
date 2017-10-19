@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 0.8rem;
 }
 
 .App-logo {
@@ -25,4 +27,86 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+  background-color: rgb(20, 20, 20);
+}
+
+.form-question {
+  flex-basis: 100%;
+}
+
+textarea {
+  height: 10rem;
+  width: 100%;
+  background-color: rgb(40, 40, 40);
+  color: rgb(300, 300, 300);
+  border: none;
+  border-bottom: 1px solid rgb(300, 300, 300);
+}
+
+.form-group {
+  flex-basis: 48%;
+}
+
+input {
+  height: 3rem;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgb(300, 300, 300);
+  padding-left: 0.5rem;
+  width: 98%;
+}
+
+textarea:focus {
+  outline: none;
+  border-bottom: 1px solid lightgreen;
+}
+
+button {
+  margin: 1rem 0;
+  width: 12rem;
+  height: 3rem;
+  background-color: rgb(20, 20, 20);
+  border: 1px solid white;
+  color: rgb(300, 300, 300);
+  font-size: 0.8rem;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+button:focus {
+  outline: none;
+  border: 1px solid lightgreen;
+  color: lightgreen;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid lightgreen;
+}
+
+p {
+  color: white;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+a {
+  position: absolute;
+  margin-top: 0.5rem;
+  align-self: flex-end;
 }
