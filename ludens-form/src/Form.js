@@ -1,38 +1,51 @@
 import React from 'react';
 
 export default class Form extends React.Component {
+	constructor () {
+		super()
+
+		this.state = {
+			txt: 'SEND FORESPØRSEL'
+		}
+		this.onSubmit = this.onSubmit.bind(this)
+	}
 	state = {
 		question: "",
 		firstName: "",
 		lastName: "",
 		phoneNumber: "",
 		email: ""
+	
 	};
 
-	change = i => {
+	change(i) {
 		this.setState({
 			[i.target.name]: i.target.value
 		});
 	};
 
-	onSubmit = (i) => {
+	onSubmit(i){
+
+		this.setState({ txt: "SENDER..."})
 		i.preventDefault();
 		console.log(this.state);
-		this.setState({
-			question: "",
-			firstName: "",
-			lastName: "",
-			phoneNumber: "",
-			email: "",
-			submit: "Sender"		
-		})
-	};
-	sendChange() {
-		this.setState({submit: "SENDER..."});
-		console.log(this)
+		setTimeout(
+			() => 	{
+			this.setState({
+				question: "",
+				firstName: "",
+				lastName: "",
+				phoneNumber: "",
+				email: "",
+				txt: "SEND FORESPØRSEL" 
+				})
+			},
+			3000
+		);	
+		
 	};
 
-	onCancel = (i) => {
+	onCancel(i) {
 		this.setState({
 			question: "",
 			firstName: "",
@@ -45,6 +58,7 @@ export default class Form extends React.Component {
 
 
 	render() {
+		const { txt } = this.state;
 
 		return (
 
@@ -99,10 +113,7 @@ export default class Form extends React.Component {
 					/>
 				</div>
 
-				<button
-				name="submit" 
-				onClick={i => this.onSubmit(i)}
-				>SEND FORESPØRSEL &nbsp;&nbsp; <i className="fa fa-envelope-o"></i> </button>
+				<button onClick={i => this.onSubmit(i)} >{ txt } </button>
 
 				<a href="" onClick={i => this.onCancel(i)}>Avbryt</a>
 			</form>

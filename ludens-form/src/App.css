@@ -38,10 +38,12 @@ form {
   margin: auto;
   padding: 1rem;
   background-color: rgb(20, 20, 20);
+  max-width: 800px;
 }
 
 .form-question {
   flex-basis: 100%;
+
 }
 
 textarea {
@@ -109,4 +111,5 @@ a {
   position: absolute;
   margin-top: 0.5rem;
   align-self: flex-end;
+  color: rgb(300, 300, 300);
 }
